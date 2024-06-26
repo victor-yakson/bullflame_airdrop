@@ -13,7 +13,7 @@ import {
   web3Provider,
   handleNetworkSwitch,
 } from "./constants";
-import { parseErrorMsg } from "../utils/index";
+import { parseErrorMsg } from "../Utils/index";
 
 export const CONTEXT = React.createContext();
 
