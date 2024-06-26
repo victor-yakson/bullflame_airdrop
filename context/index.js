@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 import { ethers, Contract } from "ethers";
 import Web3Modal from "web3modal";
 import toast from "react-hot-toast";
-import { promisify } from "util";
 
 //INTERNAL IMPORT
 import {
