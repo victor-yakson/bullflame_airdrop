@@ -30,17 +30,17 @@ const Header = () => {
       path: "#feature",
     },
     {
-      name: "ICO Chart",
+      name: "Tokenomics",
       path: "#chart",
     },
-    {
-      name: "FAQ",
-      path: "#faq",
-    },
-    {
-      name: "Contact",
-      path: "#contact",
-    },
+    // {
+    //   name: "FAQ",
+    //   path: "#faq",
+    // },
+    // {
+    //   name: "Contact",
+    //   path: "#contact",
+    // },
   ];
   return (
     <header id="header">
@@ -52,7 +52,10 @@ const Header = () => {
                 <nav className="menu-nav">
                   <div className="logo">
                     <Link href="/">
-                      <img src="assets/img/logo/logo.png" alt="Logo" />
+                      <img
+                        src="https://blog.bullflame.com/wp-content/uploads/2024/04/BFLogo-300x300.png"
+                        alt="Logo"
+                      />
                     </Link>
                   </div>
                   <div className="navbar-wrap  d-none d-lg-flex">
@@ -115,7 +118,10 @@ const Header = () => {
                   </div>
                   <div className="nav-logo">
                     <a href="index.html">
-                      <img src="assets/img/logo/logo.png" alt="Logo" />
+                      <img
+                        src="https://blog.bullflame.com/wp-content/uploads/2024/04/BFLogo-300x300.png"
+                        alt="Logo"
+                      />
                     </a>
                   </div>
                   <div className="menu-outer">

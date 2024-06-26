@@ -9,14 +9,14 @@ const Contribution = () => {
           <div class="col-lg-10">
             <div class="contribution-title">
               <h2 class="title">
-                <span>$45,256,432</span> Contribution Receive
+                <span>$100,000</span> To Be Airdrop To The Community
               </h2>
             </div>
             <div class="progress-wrap">
               <ul class="list-wrap">
-                <li>Pre-Sale</li>
-                <li>soft cap</li>
-                <li>bonus</li>
+                <li>Start</li>
+                <li>Half Way</li>
+                <li>Completed</li>
               </ul>
               <div
                 class="progress"
@@ -29,16 +29,16 @@ const Contribution = () => {
                 <div class="progress-bar" style={{ width: "83%" }}></div>
               </div>
               <h6 class="progress-title">
-                65 target raised <span>1 ETH = $1000 = 3177.38 IPHONE</span>
+                Airdroped <span>1 BNB = 1,000 BFT</span>
               </h6>
             </div>
             <div class="contribution-btn">
               <Link href="/airdrop" class="btn">
-                Get Airdrop Token
+                Claim BFT Airdro{" "}
               </Link>
-              <Link href="/airdrop" class="btn btn-two">
-                Read White Paper
-              </Link>
+              <a href="https://t.me/Bullflametoken" class="btn btn-two">
+                Join Our Telegram
+              </a>
             </div>
           </div>
         </div>

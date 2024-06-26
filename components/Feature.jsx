@@ -3,25 +3,25 @@ import React from "react";
 const Feature = () => {
   const features = [
     {
-      title: "Mobile Payment Make Easy",
-      description: "Add new, trending and rare artwork to your collection.",
+      title: "Earn 10 BFT Tokens",
+      description: " From each person that uses your link to claim the Airdro.",
       image: "features_img01.png",
     },
     {
-      title: "Lifetime Free Transaction",
-      description: "Add new, trending and rare artwork to your collection.",
+      title: "Receive 5 BFT Bonus",
+      description: "Claim BFT using someone's link to get an extra bonus of 5 BFT tokens.",
       image: "features_img02.png",
     },
-    {
-      title: "Protect the <br /> Identity",
-      description: "Add new, trending and rare artwork to your collection.",
-      image: "features_img03.png",
-    },
-    {
-      title: "Security & Control Over Money",
-      description: "Add new, trending and rare artwork to your collection.",
-      image: "features_img04.png",
-    },
+    // {
+    //   title: "Protect the <br /> Identity",
+    //   description: "Add new, trending and rare artwork to your collection.",
+    //   image: "features_img03.png",
+    // },
+    // {
+    //   title: "Security & Control Over Money",
+    //   description: "Add new, trending and rare artwork to your collection.",
+    //   image: "features_img04.png",
+    // },
   ];
   return (
     <section id="feature" class="features-area pt-140 pb-110">
@@ -29,9 +29,7 @@ const Feature = () => {
         <div class="row justify-content-center">
           <div class="col-lg-10">
             <div class="section-title text-center mb-70">
-              <h2 class="title">
-                Revolutionary ICO Platform with Exclusive Rewards Program
-              </h2>
+              <h2 class="title"> Refer And Earn More Airdrop </h2>
             </div>
           </div>
         </div>

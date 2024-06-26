@@ -54,7 +54,7 @@ const Verify = () => {
   return (
     <section className="contact-area pt-140 pb-140">
       <div className="container">
-        <div className="contact-info-wrap">
+        <div className="contact-info-wrap contact-info-item">
           <div className="row justify-content-center">
             <div className="col-xl-3 col-lg-4 col-md-6">
               <div className="contact-info-item">
@@ -65,6 +65,8 @@ const Verify = () => {
                 </div>
                 <div className="content">
                   <h6 className="title">Twitter</h6>
+                  <p>1. Post & copy the URL Id</p>
+                  <p>2. paste the posted message link below</p>
                   <Twitter
                     user={user}
                     handleClick={(e) => handleFormFieldChange("twitterId", e)}
@@ -81,6 +83,8 @@ const Verify = () => {
                 </div>
                 <div className="content">
                   <h6 className="title">Instagram</h6>
+                  <p>1. Post & copy the URL link</p>
+                  <p>2. paste the posted message link below</p>
                   <Instagram
                     user={user}
                     handleClick={(e) =>
@@ -90,13 +94,15 @@ const Verify = () => {
                 </div>
               </div>
             </div>
+          </div>
+          <div className="row justify-content-center">
             <div className="col-xl-3 col-lg-4 col-md-6">
-              <div className="contact-info-item">
-                <div className="icon">
+              {/* <div className="contact-info-item"> */}
+                {/* <div className="icon">
                   <i className="fas">
                     <FaUser />
                   </i>
-                </div>
+                </div> */}
                 <div className="content">
                   {address !== "" && claimStatus === true ? (
                     <button className="btn margin-btn-new">
@@ -118,7 +124,7 @@ const Verify = () => {
                     </button>
                   )}
                 </div>
-              </div>
+              {/* </div> */}
             </div>
           </div>
         </div>
@@ -127,6 +133,11 @@ const Verify = () => {
             <div className="col-57 order-0 order-lg-2">
               <div className="contact-form">
                 <h4 className="title">Post Details</h4>
+                <p>
+                  In the Post, ensure to tag your friends and use some hashtags
+                  to increase our community visibility. eg: @bft
+                  #bft & lots more
+                </p>
                 <div id="contact-form">
                   <div className="row">
                     <div className="col-md-6">
@@ -166,22 +177,7 @@ const Verify = () => {
                         />
                       </div>
                     </div>
-                    <div className="col-md-6">
-                      <HiOutlineClipboardDocument
-                        className="new-cursour"
-                        onClick={() =>
-                          navigator.clipboard.writeText("@Bullflame token ")
-                        }
-                      />
-                      <div className="form-grp">
-                        <input
-                          type="text"
-                          disabled
-                          placeholder="@Bullflame token
-"
-                        />
-                      </div>
-                    </div>
+
                     <div className="col-md-6">
                       <HiOutlineClipboardDocument
                         className="new-cursour"
@@ -204,15 +200,18 @@ const Verify = () => {
                     <HiOutlineClipboardDocument
                       className="new-cursour"
                       onClick={() =>
-                        navigator.clipboard.writeText(
-                          "🚀 Join the revolution! Introducing @bullflame_token, the future of decentralized finance and social impact. 💡 With every transaction, you're not just investing in a token, you're investing in positive change. 🌍 Let's empower communities, support sustainability, and drive meaningful impact together. Don't miss out on this opportunity to be part of something bigger than yourself. Invest in [Token Name] today and make a difference while earning rewards! #@bullflame_token #crypto #bullflame #dapp 🌟🔗"
-                        )
+                        navigator.clipboard
+                          .writeText(`  🚀 Claim a free 💰250 BFT Airdrop tokens worth $150. 🤑Earn An extra Bonus of 5 BFT💡 🌍Refer & Earn 10 BFT Tokens on each person.  💰Claim Now (Link)
+                         
+                         @Bullflametoken @Bullflame_token #airdrop #crypto #bsc                        `)
                       }
                     />
                     <textarea
                       name="message"
                       disabled
-                      placeholder="🚀 Join the revolution! Introducing @bullflame_token, the future of decentralized finance and social impact. 💡 With every transaction, you're not just investing in a token, you're investing in positive change. 🌍 Let's empower communities, support sustainability, and drive meaningful impact together. Don't miss out on this opportunity to be part of something bigger than yourself. Invest in [Token Name] today and make a difference while earning rewards! #@bullflame_token #crypto #bullflame #dapp 🌟🔗"
+                      placeholder="🚀  🚀 Claim a free 💰250 BFT Airdrop tokens worth $150. 🤑Earn An extra Bonus of 5 BFT💡 🌍Refer & Earn 10 BFT Tokens on each person.  💰Claim Now (Link)
+                         
+                         @Bullflametoken @Bullflame_token #airdrop #crypto #bsc        "
                     ></textarea>
                   </div>
                   <button onClick={() => handleImage()} className="btn">

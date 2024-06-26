@@ -40,6 +40,7 @@ export const CONTEXT_Provider = ({ children }) => {
   const connect = async () => {
     try {
       if (!window.ethereum) return notifyError("Install MetaMask");
+          
       await handleNetworkSwitch();
       const accounts = await window.ethereum.request({
         method: "eth_requestAccounts",

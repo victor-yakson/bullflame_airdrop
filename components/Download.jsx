@@ -9,15 +9,14 @@ const Download = () => {
             <div class="col-lg-6">
               <div class="download-content">
                 <div class="section-title mb-40">
-                  <h2 class="title">Control Application From Your Mobile</h2>
+                  <h2 class="title">Discover More</h2>
                 </div>
                 <div class="download-list">
                   <ul class="list-wrap">
                     <li>
-                      <span>1</span>White Paper
-                    </li>
-                    <li>
-                      <span>2</span>Privacy & Policy
+                      <a href="https://blog.bullflame.com/bullflame-token-airdrop-claim-details/">
+                        1. White Paper
+                      </a>
                     </li>
                   </ul>
                 </div>

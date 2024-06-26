@@ -3,15 +3,15 @@ import React from "react";
 const FeatureTwo = () => {
   const features = [
     {
-      title: "Lifetime free and transaction",
+      title: " Liquid Mining",
       image: "features_two_img01.png",
     },
     {
-      title: "Security & Control over money",
+      title: "Staking",
       image: "features_two_img02.png",
     },
     {
-      title: "Mobile Payment Make Easy",
+      title: "Play To Earn",
       image: "features_two_img03.png",
     },
   ];
@@ -21,6 +21,13 @@ const FeatureTwo = () => {
       data-background="assets/img/bg/features_bg.png"
     >
       <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-lg-10">
+            <div class="section-title text-center mb-70">
+              <h2 class="title"> Roadmap</h2>
+            </div>
+          </div>
+        </div>
         <div class="features-inner-wrap">
           <div class="features-item-wrap">
             <div class="row justify-content-center">

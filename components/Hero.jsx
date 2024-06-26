@@ -11,13 +11,14 @@ const Hero = () => {
           <div class="col-lg-10">
             <div class="banner-content text-center">
               <h2 class="title">
-                Discover the Next Big Opportunity: <br />
-                <span>Our ICO is Live</span>
+                Claim The Next Big Airdrop
+                <br />
+                <span>Bullflame Token Is Live</span>
               </h2>
               <p>
-                A new smart block chain based marketplace for trading digital
+                A new token Launch on the Binance Smart Chain for trading,
                 <br />
-                goods & assets according.
+                staking and liquid mining
               </p>
             </div>
           </div>

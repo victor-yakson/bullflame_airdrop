@@ -126,6 +126,7 @@ const changeNetwork = async ({ networkName }) => {
 };
 
 export const handleNetworkSwitch = async () => {
+  
   const networkName = "sepolia_ETH";
   await changeNetwork({ networkName });
 };

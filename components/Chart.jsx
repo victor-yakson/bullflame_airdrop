@@ -4,6 +4,13 @@ const Chart = () => {
   return (
     <div id="chart" class="chart-area pt-140">
       <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-lg-10">
+            <div class="section-title text-center mb-70">
+              <h2 class="title"> Tokenomics</h2>
+            </div>
+          </div>
+        </div>
         <div class="chart-inner-wrap">
           <div class="row align-items-center">
             <div class="col-lg-6">
@@ -24,7 +31,7 @@ const Chart = () => {
                         aria-controls="funding-tab-pane"
                         aria-selected="true"
                       >
-                        Funding Allocation
+                        Tokens Allocation{" "}
                       </button>
                     </li>
                     <li class="nav-item" role="presentation">
@@ -52,12 +59,10 @@ const Chart = () => {
                     >
                       <div class="chart-list">
                         <ul class="list-wrap">
-                          <li>Contingency: 70%</li>
-                          <li>Business Development: 20%</li>
-                          <li>Investor: 30%</li>
-                          <li>Poland: 15%</li>
-                          <li>Legal & Regulation: 20%</li>
-                          <li>Czech Republic: 50%</li>
+                          <li>Liquidity Providing: : 70%</li>
+                          <li>Airdrop Distribution: 20%</li>
+                          <li>Marketing & Charity: 5%</li>
+                          <li>Development & Team: 5%</li>
                         </ul>
                       </div>
                     </div>
@@ -70,12 +75,10 @@ const Chart = () => {
                     >
                       <div class="chart-list">
                         <ul class="list-wrap">
-                          <li>Contingency: 70%</li>
-                          <li>Business Development: 20%</li>
-                          <li>Investor: 30%</li>
-                          <li>Poland: 15%</li>
-                          <li>Legal & Regulation: 20%</li>
-                          <li>Czech Republic: 50%</li>
+                          <li>Liquidity Providing: : 70%</li>
+                          <li>Airdrop Distribution: 20%</li>
+                          <li>Marketing & Charity: 5%</li>
+                          <li>Development & Team: 5%</li>
                         </ul>
                       </div>
                     </div>
@@ -86,19 +89,23 @@ const Chart = () => {
             <div class="col-lg-6">
               <div class="right-side-content">
                 <img src="assets/img/images/chart_img.png" alt="" />
-                <p>
-                  Ethereum is a decentralized, open-source <br />
-                  blockchain with smart contract
-                </p>
+                <p>Token Details</p>
                 <ul class="list-wrap">
                   <li>
-                    <span>1</span>Symbol: IPHONE
+                    <span>1</span>Token Name: Bullflame Token
                   </li>
                   <li>
-                    <span>2</span>Initial Value : 1 ETH = 5 IPHONE
+                    <span>2</span>Total Max Supply: Total Max Supply
+                  </li>
+
+                  <li>
+                    <span>3</span>Symbol: BFT
                   </li>
                   <li>
-                    <span>3</span>Type : ERC20
+                    <span>4</span>Decimals: 18
+                  </li>
+                  <li>
+                    <span>5</span>Network : BSC
                   </li>
                 </ul>
               </div>

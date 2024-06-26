@@ -28,9 +28,9 @@ const index = () => {
         <Feature />
         <FeatureTwo />
         <Chart />
-        <Faq />
+        {/* <Faq /> */}
         <Download />
-        <Document />
+        {/* <Document /> */}
       </main>
       <Footer />
       {loader && (
