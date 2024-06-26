@@ -5,13 +5,12 @@ import toast from "react-hot-toast";
 
 const Referral = () => {
   const [referralLink, setReferralLink] = useState("");
-  const { claimRefBonus, address, connect, loader } =
-    useContext(CONTEXT);
+  const { claimRefBonus, address, connect, loader } = useContext(CONTEXT);
+
   useEffect(() => {
     if (address) {
-      // Assuming your website URL is "https://example.com"
-      const websiteUrl = "https://bullflame.com/airdrop";
-      setReferralLink(`${websiteUrl}?ref=${address}`);
+      const currentUrl = window.location.origin; // Get the current domain
+      setReferralLink(`${currentUrl}/airdrop?ref=${address}`);
     } else {
       setReferralLink(""); // Reset referral link if user is not connected
     }
@@ -69,13 +68,14 @@ const Referral = () => {
                 <h3 className="reward-title">Claim Referral Reward</h3>
               </div>
               <div className="referral-reward-body">
-                {address  && (
-                  <button className="btn btn-success btn-block"
-                  onClick={handleClaimReward}
+                {address && (
+                  <button
+                    className="btn btn-success btn-block"
+                    onClick={handleClaimReward}
                   >
-                    {loader ? "Loading..." : " Claim referal bonus"}
+                    {loader ? "Loading..." : "Claim Referral Bonus"}
                   </button>
-                ) }
+                )}
               </div>
             </div>
           </div>
