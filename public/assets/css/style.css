@@ -3271,8 +3271,8 @@ label {
   background-position: center;
   border-radius: 20px 20px 0 0;
   position: relative;
-  padding: 350px 0 0;
-  margin: -350px 20px 0;
+  /* padding: 350px 0 0; */
+  /* margin: -350px 20px 0; */
   overflow: hidden;
 }
 
@@ -3534,24 +3534,27 @@ label {
 }
 
 .referral-area {
-  padding-top: 80px; /* Adjust padding as needed */
-  padding-bottom: 80px; /* Adjust padding as needed */
+  padding-top: 80px;
+  padding-bottom: 80px;
 }
 
-.referral-info-card {
+.referral-info-card,
+.referral-reward-card {
   background-color: var(--tg-secondary-color);
   padding: 20px;
   border-radius: 8px;
   box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
 }
 
-.referral-info-header {
+.referral-info-header,
+.referral-reward-header {
   display: flex;
   align-items: center;
   margin-bottom: 15px;
 }
 
-.referral-title {
+.referral-title,
+.reward-title {
   margin-left: 10px;
   font-size: 24px;
 }
@@ -3563,28 +3566,28 @@ label {
   border: 1px solid var(--border-color);
   border-radius: 4px;
   font-size: 16px;
-  background: rgba(255 255 255 / 7%);
+  background: rgba(255, 255, 255, 0.07);
 }
 
 .btn-copy {
   margin-top: 10px;
 }
 
-.referral-reward-card {
-  background-color: var(--tg-secondary-color);
-  padding: 20px;
-  border-radius: 8px;
-  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
-}
-
-.reward-title {
-  margin-bottom: 15px;
-  font-size: 24px;
-}
-
 .referral-reward-body {
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.referral-reward-body h3 {
+  margin: 0;
+}
+
+.btn-claim {
+  margin-top: 15px;
+  width: 100%;
+  text-align: center;
 }
 
 .btn-block {

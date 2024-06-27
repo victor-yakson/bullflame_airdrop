@@ -21,10 +21,16 @@ const Download = () => {
                   </ul>
                 </div>
                 <div class="download-btn-wrap">
-                  <a href="#" class="download-btn">
+                  <a
+                    href="https://blog.bullflame.com/bullflame-token-airdrop-claim-details/"
+                    class="download-btn"
+                  >
                     <img src="assets/img/images/download_btn01.png" alt="" />
                   </a>
-                  <a href="#" class="download-btn">
+                  <a
+                    href="https://blog.bullflame.com/bullflame-token-airdrop-claim-details/"
+                    class="download-btn"
+                  >
                     <img src="assets/img/images/download_btn02.png" alt="" />
                   </a>
                 </div>

@@ -5,7 +5,7 @@ const Footer = () => {
   return (
     <footer>
       <div
-        class="footer-area footer-bg"
+        class=" footer-bg"
         data-background="assets/img/bg/footer_bg.png"
       >
         <div class="container">

@@ -5,14 +5,22 @@ import toast from "react-hot-toast";
 
 const Referral = () => {
   const [referralLink, setReferralLink] = useState("");
-  const { claimRefBonus, address, connect, loader } = useContext(CONTEXT);
+  const {
+    claimRefBonus,
+    address,
+    connect,
+    loader,
+    refBonus,
+    refCount,
+    totalRefBonus,
+  } = useContext(CONTEXT);
 
   useEffect(() => {
     if (address) {
-      const currentUrl = window.location.origin; // Get the current domain
+      const currentUrl = window.location.origin;
       setReferralLink(`${currentUrl}/airdrop?ref=${address}`);
     } else {
-      setReferralLink(""); // Reset referral link if user is not connected
+      setReferralLink("");
     }
   }, [address]);
 
@@ -32,7 +40,7 @@ const Referral = () => {
   };
 
   return (
-    <section className="referral-area pt-4 pb-4">
+    <section className="referral-area">
       <div className="container">
         <div className="row justify-content-center">
           <div className="col-lg-8">
@@ -49,34 +57,37 @@ const Referral = () => {
                   type="text"
                   value={referralLink}
                   disabled
-                  className="form-control referral-link-input"
+                  className="referral-link-input"
                 />
-                {referralLink && (
-                  <button
-                    className="btn btn-primary btn-copy"
-                    onClick={copyToClipboard}
-                  >
-                    Copy Link
-                  </button>
-                )}
               </div>
             </div>
           </div>
           <div className="col-lg-8 mt-4">
+            <div className="referral-reward-header">
+              <h3 className="reward-title" style={{ textAlign: "center" }}>
+                Claim Referral Reward
+              </h3>
+            </div>
             <div className="referral-reward-card">
-              <div className="referral-reward-header">
-                <h3 className="reward-title">Claim Referral Reward</h3>
-              </div>
-              <div className="referral-reward-body">
-                {address && (
+              {address && (
+                <div className="referral-reward-body">
+                  <h3 className="reward-title">Referral Count: {refCount}</h3>
+
+                  <h3 className="reward-title">
+                    Referral Bonus: {refBonus} BFT
+                  </h3>
+                  <h3 className="reward-title">
+                    Total Referral Bonus: {totalRefBonus} BFT
+                  </h3>
                   <button
-                    className="btn btn-success btn-block"
+                    className="btn-primary btn btn-success "
                     onClick={handleClaimReward}
+                    disabled={refBonus =="0.0"}
                   >
                     {loader ? "Loading..." : "Claim Referral Bonus"}
                   </button>
-                )}
-              </div>
+                </div>
+              )}
             </div>
           </div>
         </div>

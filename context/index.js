@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { ethers, Contract } from "ethers";
+import { ethers, Contract, BigNumber } from "ethers";
 import Web3Modal from "web3modal";
 import toast from "react-hot-toast";
 
@@ -14,6 +14,7 @@ import {
   handleNetworkSwitch,
 } from "./constants";
 import { parseErrorMsg } from "../Utils/index";
+import { formatEther } from "ethers/lib/utils";
 
 export const CONTEXT = React.createContext();
 
@@ -31,6 +32,9 @@ export const CONTEXT_Provider = ({ children }) => {
   const [contractOwnerAddr, setContractOwnerAddr] = useState();
   const [connectedTokenAddr, setConnectedTokenAddr] = useState();
   const [count, setCount] = useState(0);
+  const [refCount, setRefCount] = useState(0);
+  const [refBonus, setRefBonus] = useState(0);
+  const [totalRefBonus, setTotalRefBonus] = useState(0);
 
   //NOTIFICATION
   const notifyError = (msg) => toast.error(msg, { duration: 4000 });
@@ -40,7 +44,7 @@ export const CONTEXT_Provider = ({ children }) => {
   const connect = async () => {
     try {
       if (!window.ethereum) return notifyError("Install MetaMask");
-          
+
       await handleNetworkSwitch();
       const accounts = await window.ethereum.request({
         method: "eth_requestAccounts",
@@ -132,6 +136,27 @@ export const CONTEXT_Provider = ({ children }) => {
         // console.log(parsedAllUsers);
 
         setAllUers("");
+        // get all  referred users for an address
+
+        const getAllReferrals = await AIRDROP_CONTRACT.getAllReferrals(account);
+        const bigNumber = BigNumber.from(getAllReferrals._hex);
+        const decimalValue = bigNumber.toString();
+        setRefCount(decimalValue);
+
+        // AVAILABLE REFERRAL BONUS
+        const getAvailableRefBonus =
+          await AIRDROP_CONTRACT.getAvailableRefBonus(account);
+        const formatedGARB = BigNumber.from(
+          getAvailableRefBonus._hex
+        ).toString();
+        setRefBonus(formatEther(formatedGARB));
+
+        //  TOTAL REFERAL BONUS
+        const getTotalRefBonus = await AIRDROP_CONTRACT.getAvailableRefBonus(
+          account
+        );
+        const formatedGTRB = BigNumber.from(getTotalRefBonus._hex).toString();
+        setTotalRefBonus(formatEther(formatedGTRB));
 
         //TOKEN CONTRACT BALANCE
         const TOKEN_CONTRACT = await IphoneContract();
@@ -190,6 +215,8 @@ export const CONTEXT_Provider = ({ children }) => {
     } catch (error) {
       const errorMsg = parseErrorMsg(error);
       notifyError(errorMsg);
+      setLoader(false);
+
       console.log(error);
     }
   };
@@ -203,7 +230,7 @@ export const CONTEXT_Provider = ({ children }) => {
       const signer = PROVIDER.getSigner();
       const AIRDROP_CONTRACT = await AirdropContract();
 
-      const feeCharge = await AIRDROP_CONTRACT._fee();
+      const feeCharge = await AIRDROP_CONTRACT._refereeBonusAmount();
 
       const claim = await AIRDROP_CONTRACT.connect(signer).claimRefBonus({
         value: feeCharge.toString(),
@@ -217,6 +244,8 @@ export const CONTEXT_Provider = ({ children }) => {
     } catch (error) {
       const errorMsg = parseErrorMsg(error);
       notifyError(errorMsg);
+      setLoader(false);
+
       console.log(error);
     }
   };
@@ -460,6 +489,9 @@ export const CONTEXT_Provider = ({ children }) => {
         address,
         loader,
         claimStatus,
+        refBonus,
+        refCount,
+        totalRefBonus,
         DAPP_NAME,
         balance,
         //ADMIN

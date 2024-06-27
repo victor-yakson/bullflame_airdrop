@@ -45,7 +45,7 @@ const FeatureTwo = () => {
               ))}
             </div>
           </div>
-          <div class="row">
+          {/* <div class="row">
             <div class="col-lg-12">
               <div class="section-title section-title-two text-center">
                 <h2 class="title">
@@ -57,7 +57,7 @@ const FeatureTwo = () => {
                 </h2>
               </div>
             </div>
-          </div>
+          </div> */}
           <div class="features-line-shape"></div>
         </div>
       </div>

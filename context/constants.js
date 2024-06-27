@@ -6,7 +6,7 @@ import axios from "axios";
 import airdrop from "./airdrop.json";
 import iphone from "./iphone.json";
 
-export const airdrop_ADDRESS = "0x71018a9ca6978Bcdf8B8F27D551015f54313DDE3";
+export const airdrop_ADDRESS = "0xeF459CAf4Ac30bfdb5D2FB0Ab673D1dB2BC3CE68";
 const airdrop_ABI = airdrop;
 
 //IPHONE
@@ -111,7 +111,10 @@ const networks = {
 
 const changeNetwork = async ({ networkName }) => {
   try {
-    if (!window.ethereum) throw new Error("No crypto wallet found");
+    if (!window.ethereum)
+      throw new Error(
+        "You can put a message.Kindly copy and open this airdrop in your crypto wallet dApp browser to connect"
+      );
     await window.ethereum.request({
       method: "wallet_addEthereumChain",
       params: [
@@ -126,7 +129,6 @@ const changeNetwork = async ({ networkName }) => {
 };
 
 export const handleNetworkSwitch = async () => {
-  
   const networkName = "sepolia_ETH";
   await changeNetwork({ networkName });
 };

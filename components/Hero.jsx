@@ -17,7 +17,7 @@ const Hero = () => {
               </h2>
               <p>
                 A new token Launch on the Binance Smart Chain for trading,
-                <br />
+                <br /> <br />
                 staking and liquid mining
               </p>
             </div>
@@ -25,7 +25,7 @@ const Hero = () => {
         </div>
       </div>
       <div class="banner-scroll-down">
-        <a href="#contribution" class="section-link">
+        <a href="#airdrop" class="section-link">
           <span></span>
           <span></span>
           <span></span>

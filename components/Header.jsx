@@ -22,11 +22,11 @@ const Header = () => {
       path: "/",
     },
     {
-      name: "Contribution",
-      path: "#contribution",
+      name: "Airdrop",
+      path: "#airdrop",
     },
     {
-      name: "Feature",
+      name: "Bonus",
       path: "#feature",
     },
     {
@@ -94,11 +94,11 @@ const Header = () => {
                         </li>
                       )}
 
-                      <li className="offcanvas-menu">
+                      {/* <li className="offcanvas-menu">
                         <a className="menu-tigger">
                           <RiMenu3Line />
                         </a>
-                      </li>
+                      </li> */}
                     </ul>
                   </div>
                   <div className="mobile-nav-toggler">

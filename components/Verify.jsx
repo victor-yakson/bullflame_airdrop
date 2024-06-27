@@ -33,8 +33,8 @@ const Verify = () => {
   };
 
   const handleImage = () => {
-    let url = `airdrop.png`;
-    saveAs(url, `@theblockchaincoders`);
+    let url = `token.png`;
+    saveAs(url, `@bullflametoken`);
   };
 
   const CALLING_AIRDROP = async () => {
@@ -65,8 +65,8 @@ const Verify = () => {
                 </div>
                 <div className="content">
                   <h6 className="title">Twitter</h6>
-                  <p>1. Post & copy the URL Id</p>
-                  <p>2. paste the posted message link below</p>
+                  <p> 1. Copy the below message</p>
+                  <p> 2. Make a post on X & provide your URL</p>
                   <Twitter
                     user={user}
                     handleClick={(e) => handleFormFieldChange("twitterId", e)}
@@ -83,8 +83,8 @@ const Verify = () => {
                 </div>
                 <div className="content">
                   <h6 className="title">Instagram</h6>
-                  <p>1. Post & copy the URL link</p>
-                  <p>2. paste the posted message link below</p>
+                  <p> 1. Copy the below message</p>
+                  <p> 2. Make a post on X & provide your UR</p>
                   <Instagram
                     user={user}
                     handleClick={(e) =>
@@ -98,32 +98,32 @@ const Verify = () => {
           <div className="row justify-content-center">
             <div className="col-xl-3 col-lg-4 col-md-6">
               {/* <div className="contact-info-item"> */}
-                {/* <div className="icon">
+              {/* <div className="icon">
                   <i className="fas">
                     <FaUser />
                   </i>
                 </div> */}
-                <div className="content">
-                  {address !== "" && claimStatus === true ? (
-                    <button className="btn margin-btn-new">
-                      {loader ? "loading..." : "Already Claim Airdrop"}
-                    </button>
-                  ) : address !== "" && claimStatus === false ? (
-                    <button
-                      onClick={() => CALLING_AIRDROP()}
-                      className="btn margin-btn-new"
-                    >
-                      {loader ? "loading..." : "Claim Airdrop"}
-                    </button>
-                  ) : (
-                    <button
-                      onClick={() => connect()}
-                      className="btn margin-btn-new"
-                    >
-                      Connect Wallet
-                    </button>
-                  )}
-                </div>
+              <div className="content">
+                {address !== "" && claimStatus === true ? (
+                  <button className="btn margin-btn-new">
+                    {loader ? "loading..." : "Already Claim Airdrop"}
+                  </button>
+                ) : address !== "" && claimStatus === false ? (
+                  <button
+                    onClick={() => CALLING_AIRDROP()}
+                    className="btn margin-btn-new"
+                  >
+                    {loader ? "loading..." : "Claim Airdrop"}
+                  </button>
+                ) : (
+                  <button
+                    onClick={() => connect()}
+                    className="btn margin-btn-new"
+                  >
+                    Connect Wallet
+                  </button>
+                )}
+              </div>
               {/* </div> */}
             </div>
           </div>

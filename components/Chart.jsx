@@ -95,7 +95,7 @@ const Chart = () => {
                     <span>1</span>Token Name: Bullflame Token
                   </li>
                   <li>
-                    <span>2</span>Total Max Supply: Total Max Supply
+                    <span>2</span>Total Max Supply: 10 million BFT
                   </li>
 
                   <li>

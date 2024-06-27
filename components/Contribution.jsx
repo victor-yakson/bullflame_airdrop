@@ -3,7 +3,7 @@ import Link from "next/link";
 
 const Contribution = () => {
   return (
-    <section id="contribution" class="contribution-area pt-130 pb-130">
+    <section id="airdrop" class="contribution-area pt-130 pb-130">
       <div class="container">
         <div class="row justify-content-center">
           <div class="col-lg-10">
@@ -34,7 +34,7 @@ const Contribution = () => {
             </div>
             <div class="contribution-btn">
               <Link href="/airdrop" class="btn">
-                Claim BFT Airdro{" "}
+                Claim BFT Airdrop{" "}
               </Link>
               <a href="https://t.me/Bullflametoken" class="btn btn-two">
                 Join Our Telegram

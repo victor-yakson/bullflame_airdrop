@@ -28,8 +28,10 @@ const airdrop = () => {
           <main>
             <Banner
               title={"Airdrop"}
-              type={"Claim"}
-              action={"Free 250 BFT Tokens Worth $150 Airdrop"}
+              type={"Complete"}
+              action={
+                " These Simple Tasks To Tlaim Free 250 BFT Tokens Worth $150 Airdrop"
+              }
             />
 
             <Verify />
