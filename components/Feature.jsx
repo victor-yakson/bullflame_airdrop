@@ -4,7 +4,7 @@ const Feature = () => {
   const features = [
     {
       title: "Earn 10 BFT Tokens",
-      description: " From each person that uses your link to claim the Airdro.",
+      description: " From each person that uses your link to claim the Airdrop.",
       image: "features_img01.png",
     },
     {

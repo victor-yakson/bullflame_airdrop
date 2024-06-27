@@ -9,11 +9,13 @@ import { FaFacebookF } from "react-icons/fa";
 import { TwitterMomentShare } from "react-social-media-embed";
 import { Linkedin, Twitter, Instagram, Follow } from "./index";
 import { CONTEXT } from "../context/index";
+import toast from "react-hot-toast";
 
 const Verify = () => {
   const { claimAirdrop, notifyError, address, connect, loader, claimStatus } =
     useContext(CONTEXT);
   const router = useRouter();
+  const [referralLink, setReferralLink] = useState("");
 
   const [user, setUser] = useState({
     twitterId: "",
@@ -27,6 +29,15 @@ const Verify = () => {
       setUser((prevUser) => ({ ...prevUser, referee: ref }));
     }
   }, [router.query]);
+
+  useEffect(() => {
+    if (address) {
+      const currentUrl = window.location.origin;
+      setReferralLink(`${currentUrl}/airdrop?ref=${address}`);
+    } else {
+      setReferralLink("");
+    }
+  }, [address]);
 
   const handleFormFieldChange = (fieldName, e) => {
     setUser({ ...user, [fieldName]: e.target.value });
@@ -74,7 +85,7 @@ const Verify = () => {
                 </div>
               </div>
             </div>
-            <div className="col-xl-3 col-lg-4 col-md-6">
+            {/* <div className="col-xl-3 col-lg-4 col-md-6">
               <div className="contact-info-item">
                 <div className="icon">
                   <i className="fas">
@@ -93,7 +104,7 @@ const Verify = () => {
                   />
                 </div>
               </div>
-            </div>
+            </div> */}
           </div>
           <div className="row justify-content-center">
             <div className="col-xl-3 col-lg-4 col-md-6">
@@ -140,7 +151,7 @@ const Verify = () => {
                 </p>
                 <div id="contact-form">
                   <div className="row">
-                    <div className="col-md-6">
+                    {/* <div className="col-md-6">
                       <HiOutlineClipboardDocument
                         className="new-cursour"
                         onClick={() =>
@@ -159,8 +170,8 @@ const Verify = () => {
                           placeholder="Twitter @Bullflame_token"
                         />
                       </div>
-                    </div>
-                    <div className="col-md-6">
+                    </div> */}
+                    {/* <div className="col-md-6">
                       <HiOutlineClipboardDocument
                         className="new-cursour"
                         onClick={() =>
@@ -176,16 +187,17 @@ const Verify = () => {
                           placeholder="Instgram: @Bullflame token"
                         />
                       </div>
-                    </div>
+                    </div> */}
 
-                    <div className="col-md-6">
+                    {/* <div className="col-md-6">
                       <HiOutlineClipboardDocument
                         className="new-cursour"
-                        onClick={() =>
+                        onClick={() => {
                           navigator.clipboard.writeText(
                             "Website: https://www.bullflame.com/"
-                          )
-                        }
+                          );
+                          toast.success("copied!");
+                        }}
                       />
                       <div className="form-grp">
                         <input
@@ -194,25 +206,30 @@ const Verify = () => {
                           placeholder="Website: https://www.bullflame.com/"
                         />
                       </div>
-                    </div>
+                    </div> */}
                   </div>
                   <div className="form-grp">
                     <HiOutlineClipboardDocument
                       className="new-cursour"
-                      onClick={() =>
+                      onClick={() => {
                         navigator.clipboard
                           .writeText(`  🚀 Claim a free 💰250 BFT Airdrop tokens worth $150. 🤑Earn An extra Bonus of 5 BFT💡 🌍Refer & Earn 10 BFT Tokens on each person.  💰Claim Now (Link)
                          
-                         @Bullflametoken @Bullflame_token #airdrop #crypto #bsc                        `)
-                      }
+                         @Bullflametoken @Bullflame_token #airdrop #crypto #bsc   
+                        Get started  using my link.
+                         ${referralLink}
+                                              `);
+                        toast.success("copied!");
+                      }}
                     />
                     <textarea
                       name="message"
                       disabled
-                      placeholder="🚀  🚀 Claim a free 💰250 BFT Airdrop tokens worth $150. 🤑Earn An extra Bonus of 5 BFT💡 🌍Refer & Earn 10 BFT Tokens on each person.  💰Claim Now (Link)
-                         
-                         @Bullflametoken @Bullflame_token #airdrop #crypto #bsc        "
-                    ></textarea>
+                      placeholder={`🚀  🚀 Claim a free 💰250 BFT Airdrop tokens worth $150. 🤑Earn An extra Bonus of 5 BFT💡 🌍Refer & Earn 10 BFT Tokens on each person.  💰Claim Now (Link) @Bullflametoken @Bullflame_token #airdrop #crypto #bsc. Get started  using my link. ${referralLink}
+     `}
+                    >
+                      {" "}
+                    </textarea>
                   </div>
                   <button onClick={() => handleImage()} className="btn">
                     Download Image

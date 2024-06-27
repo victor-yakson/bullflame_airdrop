@@ -65,7 +65,10 @@ export const CONTEXT_Provider = ({ children }) => {
   //CHECH IF WALLET CONNECTED
   const checkIfWalletConnected = async () => {
     try {
-      if (!window.ethereum) return notifyError("Install MetaMask");
+      if (!window.ethereum)
+        return notifyError(
+          "You can put a message.Kindly copy and open this airdrop in your crypto wallet dApp browser to connect"
+        );
       await handleNetworkSwitch();
       const accounts = await window.ethereum.request({
         method: "eth_accounts",
