@@ -148,7 +148,7 @@ const Header = () => {
                       )}
                     </ul>
                   </div>
-                  <div className="social-links">
+                  {/* <div className="social-links">
                     <ul className="clearfix list-wrap">
                       <li>
                         <a href="#">
@@ -186,7 +186,7 @@ const Header = () => {
                         </a>
                       </li>
                     </ul>
-                  </div>
+                  </div> */}
                 </nav>
               </div>
               <div className="menu-backdrop"></div>

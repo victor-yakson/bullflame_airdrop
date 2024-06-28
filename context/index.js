@@ -43,7 +43,10 @@ export const CONTEXT_Provider = ({ children }) => {
   //CONNECT WALLET
   const connect = async () => {
     try {
-      if (!window.ethereum) return notifyError("Install MetaMask");
+      if (!window.ethereum)
+        return notifyError(
+          "Kindly copy and open this airdrop in your crypto wallet dApp browser to connect"
+        );
 
       await handleNetworkSwitch();
       const accounts = await window.ethereum.request({
@@ -67,7 +70,7 @@ export const CONTEXT_Provider = ({ children }) => {
     try {
       if (!window.ethereum)
         return notifyError(
-          "You can put a message.Kindly copy and open this airdrop in your crypto wallet dApp browser to connect"
+          "Kindly copy and open this airdrop in your crypto wallet dApp browser to connect"
         );
       await handleNetworkSwitch();
       const accounts = await window.ethereum.request({
@@ -125,6 +128,8 @@ export const CONTEXT_Provider = ({ children }) => {
         const airdropAmountUser = await AIRDROP_CONTRACT._airdropAmount();
         setAirdropPerUser(ethers.utils.formatEther(airdropAmountUser));
 
+        //FEE
+
         // GET ALL  USERS
         // const getAllUsers = await AIRDROP_CONTRACT.getAllAirdrops();
 
@@ -146,16 +151,21 @@ export const CONTEXT_Provider = ({ children }) => {
         const decimalValue = bigNumber.toString();
         setRefCount(decimalValue);
 
-        // AVAILABLE REFERRAL BONUS
-        const getAvailableRefBonus =
-          await AIRDROP_CONTRACT.getAvailableRefBonus(account);
-        const formatedGARB = BigNumber.from(
-          getAvailableRefBonus._hex
-        ).toString();
-        setRefBonus(formatEther(formatedGARB));
+        try {
+          // AVAILABLE REFERRAL BONUS
+          const getAvailableRefBonus =
+            await AIRDROP_CONTRACT.getAvailableRefBonus(account);
+          const formatedGARB = BigNumber.from(
+            getAvailableRefBonus._hex
+          ).toString();
+          setRefBonus(formatEther(formatedGARB));
+        } catch (error) {
+          console.error("Error fetching referral bonus:", error);
+          // Handle the error, e.g., show an error message to the user
+        }
 
         //  TOTAL REFERAL BONUS
-        const getTotalRefBonus = await AIRDROP_CONTRACT.getAvailableRefBonus(
+        const getTotalRefBonus = await AIRDROP_CONTRACT.getTotalReferralBonus(
           account
         );
         const formatedGTRB = BigNumber.from(getTotalRefBonus._hex).toString();
@@ -168,6 +178,9 @@ export const CONTEXT_Provider = ({ children }) => {
         const tokenClaimUserBal = ethers.utils.formatEther(
           selectedTokenBal.toString()
         );
+        const hasClaimAirdrop = await AIRDROP_CONTRACT.hasClaimedAirdrop(
+          account
+        );
 
         // if (tokenClaimUserBal <= 1) {
         //   const filteredCampaigns = getAllUsers.filter((user) =>
@@ -178,7 +191,8 @@ export const CONTEXT_Provider = ({ children }) => {
         // } else {
         //   setClaimStatus(true);
         // }
-        setClaimStatus(false);
+        console.log("has claimed airdrop:", hasClaimAirdrop);
+        setClaimStatus(hasClaimAirdrop);
         setLoader(false);
       }
     } catch (error) {

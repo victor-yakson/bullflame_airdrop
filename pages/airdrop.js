@@ -17,7 +17,6 @@ import { CONTEXT } from "../context/index";
 
 const airdrop = () => {
   const { loader, airdropBalance } = useContext(CONTEXT);
-  console.log(airdropBalance);
   return (
     <>
       {airdropBalance == 0 ? (

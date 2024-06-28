@@ -19,7 +19,6 @@ const Verify = () => {
 
   const [user, setUser] = useState({
     twitterId: "",
-    instagramUrl: "",
     referee: "",
   });
 
@@ -49,11 +48,11 @@ const Verify = () => {
   };
 
   const CALLING_AIRDROP = async () => {
-    const { twitterId, instagramUrl, referee } = user;
+    const { twitterId, referee } = user;
 
     console.log(user);
 
-    if (!instagramUrl || !twitterId) {
+    if (!twitterId) {
       return notifyError("Provide all details to claim airdrop");
     }
 
@@ -224,13 +223,12 @@ const Verify = () => {
                     />
                     <textarea
                       name="message"
-                      disabled
-                      placeholder={`🚀  🚀 Claim a free 💰250 BFT Airdrop tokens worth $150. 🤑Earn An extra Bonus of 5 BFT💡 🌍Refer & Earn 10 BFT Tokens on each person.  💰Claim Now (Link) @Bullflametoken @Bullflame_token #airdrop #crypto #bsc. Get started  using my link. ${referralLink}
-     `}
-                    >
-                      {" "}
-                    </textarea>
+                      readOnly
+                      placeholder={`🚀 Claim a free 💰250 BFT Airdrop tokens worth $150. 🤑Earn An extra Bonus of 5 BFT💡 🌍Refer & Earn 10 BFT Tokens on each person.💰Claim Now (Link) @Bullflametoken @Bullflame_token #airdrop #crypto #bsc Get started  using my link.${referralLink}
+                                              `}
+                    ></textarea>
                   </div>
+
                   <button onClick={() => handleImage()} className="btn">
                     Download Image
                   </button>

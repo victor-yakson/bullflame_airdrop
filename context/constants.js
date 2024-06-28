@@ -6,7 +6,7 @@ import axios from "axios";
 import airdrop from "./airdrop.json";
 import iphone from "./iphone.json";
 
-export const airdrop_ADDRESS = "0xeF459CAf4Ac30bfdb5D2FB0Ab673D1dB2BC3CE68";
+export const airdrop_ADDRESS = "0xb255757041Fe9d09fcD04a40140B19fe15a0f993";
 const airdrop_ABI = airdrop;
 
 //IPHONE
@@ -113,7 +113,7 @@ const changeNetwork = async ({ networkName }) => {
   try {
     if (!window.ethereum)
       throw new Error(
-        "You can put a message.Kindly copy and open this airdrop in your crypto wallet dApp browser to connect"
+        "Kindly copy and open this airdrop in your crypto wallet dApp browser to connect"
       );
     await window.ethereum.request({
       method: "wallet_addEthereumChain",
