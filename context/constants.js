@@ -6,11 +6,11 @@ import axios from "axios";
 import airdrop from "./airdrop.json";
 import iphone from "./iphone.json";
 
-export const airdrop_ADDRESS = "0xb255757041Fe9d09fcD04a40140B19fe15a0f993";
+export const airdrop_ADDRESS = "0x37b56050CDbb9A6Fb99877AA066982fc2f337F06";
 const airdrop_ABI = airdrop;
 
 //IPHONE
-export const iphone_ADDRESS = "0x9d06dD916375B8F6524fBb5ddD29988f8a13Cb5F";
+export const iphone_ADDRESS = " 0xAD6b79f1D3BB1c75b5aef80dF7239F4a5674F81c";
 const iphone_ABI = iphone;
 
 const fetchContract = (signer, ABI, ADDRESS) =>
@@ -129,7 +129,7 @@ const changeNetwork = async ({ networkName }) => {
 };
 
 export const handleNetworkSwitch = async () => {
-  const networkName = "sepolia_ETH";
+  const networkName = "bsc";
   await changeNetwork({ networkName });
 };
 

@@ -75,8 +75,12 @@ const Verify = () => {
                 </div>
                 <div className="content">
                   <h6 className="title">Twitter</h6>
-                  <p> 1. Copy the below message</p>
-                  <p> 2. Make a post on X & provide your URL</p>
+                  <p style={{fontSize:"100%"}}> 1. Copy the below message</p>
+                  <p  style={{fontSize:"100%"}}>
+                    {" "}
+                    2. Make a post on X & provide your URL in this post id
+                    section to be able to claim the Airdrop
+                  </p>
                   <Twitter
                     user={user}
                     handleClick={(e) => handleFormFieldChange("twitterId", e)}
@@ -116,7 +120,7 @@ const Verify = () => {
               <div className="content">
                 {address !== "" && claimStatus === true ? (
                   <button className="btn margin-btn-new">
-                    {loader ? "loading..." : "Already Claim Airdrop"}
+                    {loader ? "loading..." : "Already Claimed Airdrop"}
                   </button>
                 ) : address !== "" && claimStatus === false ? (
                   <button
@@ -143,7 +147,7 @@ const Verify = () => {
             <div className="col-57 order-0 order-lg-2">
               <div className="contact-form">
                 <h4 className="title">Post Details</h4>
-                <p>
+                <p >
                   In the Post, ensure to tag your friends and use some hashtags
                   to increase our community visibility. eg: @bft
                   #bft & lots more
@@ -207,7 +211,7 @@ const Verify = () => {
                       </div>
                     </div> */}
                   </div>
-                  <div className="form-grp">
+                  <div className="form-grp" >
                     <HiOutlineClipboardDocument
                       className="new-cursour"
                       onClick={() => {
@@ -228,10 +232,13 @@ const Verify = () => {
                                               `}
                     ></textarea>
                   </div>
-
-                  <button onClick={() => handleImage()} className="btn">
-                    Download Image
-                  </button>
+                  <div style={{display:"flex",flexWrap:"wrap", alignItems:"center", justifyContent:"center", gap: "10px" }}>
+                    {" "}
+                    <button className="btn ">Join Our Telegram </button>
+                    <button onClick={() => handleImage()} className="btn">
+                      Download Image
+                    </button>
+                  </div>
                 </div>
                 <p className="ajax-response mb-0"></p>
               </div>

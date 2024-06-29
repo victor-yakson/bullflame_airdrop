@@ -36,7 +36,7 @@ const Footer = () => {
                       { name: "Mine BNB", link: "https://bullflame.com" },
                     ].map((menu, index) => (
                       <li key={menu}>
-                        <a href={menu.link}>{menu.name}</a>
+                        <a href={menu.link} target="_blank">{menu.name}</a>
                       </li>
                     ))}
                   </ul>
@@ -55,7 +55,7 @@ const Footer = () => {
           </div>
         </div>
         <div class="footer-shape-wrap">
-          <img
+          <img 
             src="assets/img/images/footer_shape01.png"
             alt=""
             class="alltuchtopdown"

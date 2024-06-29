@@ -29,7 +29,7 @@ const airdrop = () => {
               title={"Airdrop"}
               type={"Complete"}
               action={
-                " These Simple Tasks To Tlaim Free 250 BFT Tokens Worth $150 Airdrop"
+                " These Simple Tasks To claim Free 250 BFT Tokens Worth $150 Airdrop on BSC Network"
               }
             />
 
