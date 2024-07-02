@@ -243,12 +243,15 @@ export const CONTEXT_Provider = ({ children }) => {
       const PROVIDER = await web3Provider();
       const signer = PROVIDER.getSigner();
       const AIRDROP_CONTRACT = await AirdropContract();
-      const feeCharge = await AIRDROP_CONTRACT._refereeBonusAmount();
-      console.log("fee charge:", feeCharge);
-      const claim = await AIRDROP_CONTRACT.connect(signer).claimRefBonus({
-        value: feeCharge.toString(),
-        gasLimit: ethers.utils.hexlify(1000000),
-      });
+      const feeCharge = await AIRDROP_CONTRACT._fee();
+      const amount = await AIRDROP_CONTRACT._refereeBonusAmount();
+      const claim = await AIRDROP_CONTRACT.connect(signer).claimRefBonus(
+        amount.toString(),
+        {
+          value: feeCharge.toString(),
+          gasLimit: ethers.utils.hexlify(1000000),
+        }
+      );
       const tx = await claim.wait();
       setLoader(false);
       notifySuccess("Ref bonus claimed Successfully ");
