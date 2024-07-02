@@ -191,7 +191,6 @@ export const CONTEXT_Provider = ({ children }) => {
         // } else {
         //   setClaimStatus(true);
         // }
-        console.log("has claimed airdrop:", hasClaimAirdrop);
         setClaimStatus(hasClaimAirdrop);
         setLoader(false);
       }
@@ -216,9 +215,7 @@ export const CONTEXT_Provider = ({ children }) => {
       const PROVIDER = await web3Provider();
       const signer = PROVIDER.getSigner();
       const AIRDROP_CONTRACT = await AirdropContract();
-
       const feeCharge = await AIRDROP_CONTRACT._fee();
-
       const claim = await AIRDROP_CONTRACT.connect(signer).dropTokens(referee, {
         value: feeCharge.toString(),
         gasLimit: ethers.utils.hexlify(1000000),
@@ -246,9 +243,8 @@ export const CONTEXT_Provider = ({ children }) => {
       const PROVIDER = await web3Provider();
       const signer = PROVIDER.getSigner();
       const AIRDROP_CONTRACT = await AirdropContract();
-
       const feeCharge = await AIRDROP_CONTRACT._refereeBonusAmount();
-
+      console.log("fee charge:", feeCharge);
       const claim = await AIRDROP_CONTRACT.connect(signer).claimRefBonus({
         value: feeCharge.toString(),
         gasLimit: ethers.utils.hexlify(1000000),
